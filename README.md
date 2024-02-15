@@ -1,1 +1,1 @@
-Blog for Studying Docker and Server Technologies
+Blog for Studying MySQL
