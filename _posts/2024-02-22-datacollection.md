@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Managing MySQL with Python"
+title:  "Handling Python-based MySQL from Data Collection to Storage"
 categories: [ MySQL ]
 image: assets/img/20240222_3.png
 tags: [featured]
