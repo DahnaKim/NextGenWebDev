@@ -1,1 +1,1 @@
-Blog for Studying MySQL
+A Personal Project Playground
