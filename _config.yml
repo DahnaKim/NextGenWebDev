@@ -3,7 +3,7 @@ name: "Dahna's Blog"
 description: 'Blog for Studying MySQL'
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico' 
-baseurl: '/StudyingMySQL'
+baseurl: '/NextGenWebDev'
 disqus: 'awesomebsite'
 email: 'dahna0915@gmail.com'
 
@@ -20,7 +20,7 @@ plugins:
 authors:
     dahna:
       name:           Dahna
-      site:           https://dahnakim.github.io/StudyingMySQL/
+      site:           https://dahnakim.github.io/NextGenWebDev/
       avatar:         /assets/images/avatar1.png
       bio:            "Hi, I am Dahna, the author of this blog!"
       email:          dahna0915@gmail.com
