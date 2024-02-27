@@ -1,10 +1,10 @@
 # Site
 name: "Dahna's Blog"
-description: 'Blog for Studying MySQL'
+description: 'One of Personal Project'
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico' 
 baseurl: '/NextGenWebDev'
-disqus: 'awesomebsite'
+# disqus: 'awesomebsite'
 email: 'dahna0915@gmail.com'
 
 include: ["_pages"]
