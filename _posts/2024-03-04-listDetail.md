@@ -66,13 +66,15 @@ def listall():
 </head>  
 <body>  
 <h1>Select Artwork</h1>  
-<ul>  
+<ul>
+    {% raw %}
     {% for image in images %}  
     <li>  
         <a href="/listall/{{ image[0] }}">{{ image[1] }}</a>  
         <img src="/{{ image[2] }}" alt="{{ image[1] }}"><!-- 이미지 표시 -->  
     </li>  
-    {% endfor %}  
+    {% endfor %}
+    {% endraw %}  
 </ul>  
 </body>  
 </html>  
@@ -104,6 +106,7 @@ def view_artwork(artwork_id):
 <body>
 <h1>Select Artwork</h1>
 <ul>
+    {% raw %}
     {% for image in images %}
     <li>
         <!-- 작품 상세 페이지로 이동하는 링크 업데이트 -->
@@ -112,6 +115,7 @@ def view_artwork(artwork_id):
         <img src="{{ url_for('static', filename=image[2][7:]) }}" alt="{{ image[1] }}" style="width:200px; height:auto;">
     </li>
     {% endfor %}
+    {% endraw %}
 </ul>
 </body>
 ~~~
