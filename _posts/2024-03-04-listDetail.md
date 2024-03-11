@@ -99,6 +99,13 @@ def view_artwork(artwork_id):
         return "Artwork not found", 404
 ~~~
 
+`cursor.execute()` : SQL쿼리를 실행하여, images 테이블에서 id, title, description, file_path, created_at 컬럼을 선택하고, 특정 id(URL에서 받아온 artwork_id)를 가진 행을 조회
+`%s` : %s는 쿼리를 실행할 때 제공될 매개변수의 자리 표시자(placeholder)이다.
+문자열, 숫자, 날짜 등 다양한 데이터 유형의 값을 동적으로 바인딩하는 데 사용된다.
+이러한 방식은 SQL 인젝션 공격과 같은 보안 취약점을 방지하는 데 도움이 됨
+쿼리의 매개변수가 사용자 입력을 기반으로 할 때, 이 입력값을 쿼리의 일부로 직접 삽입하는 대신 자리 표시자를 사용하고, 실행 시점에 안전하게 값을 바인딩함으로써, 악의적인 SQL 코드의 삽입을 방지할 수 있다.
+
+
 <br>
 
 **list.html 수정**
