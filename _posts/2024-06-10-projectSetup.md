@@ -1,0 +1,129 @@
+---  
+layout: post  
+title:  "Project Setup"  
+categories: [ Clone Coding ]  
+image: assets/img/20240610_4.png  
+tags: [featured]  
+---  
+  
+# Full Stack Clone Coding    
+    
+## Next JS Quiz 정답 설명    
+    
+1. 라이브러리와 프레임워크의 주요 차이점    
+라이브러리 (Library):    
+* 라이브러리는 특정 기능을 수행하기 위해 사용할 수 있는 도구 모음    
+* 개발자는 필요한 기능을 수행하기 위해 라이브러리를 호출한다.    
+* 제어 흐름은 개발자의 코드가 주도함. 즉, 개발자가 언제, 어디서 라이브러리를 호출할지 결정한다.    
+프레임워크 (Framework):    
+* 프레임워크는 애플리케이션의 구조를 제공하며, 개발자가 그 구조 내에서 코드를 작성한다.    
+* 프레임워크는 개발자의 코드를 호출한다.    
+* 제어 흐름은 프레임워크가 주도. 즉, 프레임워크가 어떤 순서로 개발자의 코드를 실행할지 결정한다.    
+    
+2. Next.js는 React 애플리케이션을 위한 프레임워크이다.    
+* 구조 제공: Next.js는 애플리케이션의 구조를 정의하고, 페이지 기반 라우팅, 서버 사이드 렌더링(SSR), 정적 사이트 생성(SSG) 등의 기능을 제공한다.  
+* 제어 흐름: Next.js는 애플리케이션의 제어 흐름을 주도함. 개발자는 Next.js의 규칙과 구조를 따르면서 코드를 작성한다.  
+* 통합된 도구: Next.js는 빌드 도구, 서버 사이드 렌더링, 코드 스플리팅 등 다양한 기능을 통합하여 제공한다.  
+따라서 Next.js는 단순한 라이브러리가 아니라, 개발자가 애플리케이션을 구축하는 데 필요한 다양한 기능과 구조를 제공하는 프레임워크이다.  
+  
+3. Next.js에서는 페이지 기반 라우팅을 사용  
+파일 시스템을 기반으로 URL 경로를 자동으로 생성하는 방식이다.   
+Next.js 프로젝트의 pages 폴더 안에 있는 파일들은 각각 URL 경로로 매핑된다.  
+* /pages/about.jsx 파일을 생성하면, 해당 파일이 /about 경로에 매핑된다.  
+* src 폴더는 일반적으로 소스 코드를 저장하는 디렉토리일 뿐, Next.js의 페이지 라우팅과는 직접적인 관계가 없다.  
+따라서 /about 경로를 생성하려면 pages 폴더 안에 about.jsx 파일을 만들어야 한다.  
+  
+4. _app.jsx란  
+_app.jsx 파일은 Next.js 애플리케이션의 사용자 정의 App 컴포넌트를 정의하는 파일이다.   
+이 파일은 모든 페이지의 공통 설정을 제공하고, 페이지 간의 공통 레이아웃이나 상태를 관리하는 데 사용된다.  
+* Next.js는 pages 폴더 내의 각 파일을 개별 페이지로 간주하지만, _app.jsx 파일은 이러한 모든 페이지를 감싸는 기본 구조를 제공한다.  
+* 예를 들어, 공통 스타일, 레이아웃, 전역 상태 관리(예: Redux)를 _app.jsx 파일에서 설정할 수 있다.  
+* 이를 통해 각 페이지에서 반복적으로 설정할 필요 없이, 모든 페이지에 적용할 수 있는 공통 설정을 한 곳에서 관리할 수 있다.  
+따라서 _app.jsx 파일은 Next.js가 모든 페이지를 빌드할 때 사용하는 블루프린트 역할을 한다.  
+  
+5. Next.js에서는 별도의 추가 설치 없이 CSS를 사용할 수 있다.  
+Next.js는 기본적으로 CSS 파일을 지원하며, 다음과 같은 방식으로 사용할 수 있다:  
+**글로벌 CSS**:  
+    * Next.js 프로젝트의 pages 폴더 내에 _app.jsx 파일이 있는데, 이 파일에서 글로벌 CSS 파일을 import할 수 있다.  
+    * 예: import '../styles/global.css';  
+**CSS 모듈**:  
+    * 각 컴포넌트에 스코프된 CSS를 사용하고 싶다면, CSS 모듈을 사용할 수 있다.  
+    * 파일명을 [filename].module.css로 하고, 컴포넌트에서 import하여 사용  
+    * 예: import styles from './Button.module.css';  
+Next.js는 이러한 방식으로 별도의 설정이나 추가 설치 없이도 CSS를 사용할 수 있도록 기본적으로 지원하고 있다.  
+  
+6. getServerSideProps를 사용하는 이유  
+getServerSideProps는 Next.js에서 서버 사이드 렌더링(SSR)을 위해 사용하는 함수이다.   
+이 함수는 페이지가 렌더링되기 전에 서버에서 실행되어 데이터를 가져오고, 해당 데이터를 페이지 컴포넌트에 프롭스로 전달한다.  
+다음과 같은 이유로 사용됨:  
+1. 서버 사이드 데이터 페칭: 페이지가 요청될 때마다 서버에서 데이터를 가져와야 할 때 사용한다.  
+2. SEO 개선: 서버에서 데이터를 가져와 페이지를 렌더링하기 때문에, 검색 엔진에 더 잘 노출될 수 있다.  
+3. 실시간 데이터: 최신 데이터를 페이지에 반영해야 할 때 유용하다.  
+  
+7. Next.js에서는 동적 라우팅을 지원하기 위해 대괄호[]를 사용한다.   
+동적 경로를 정의할 때, 경로의 일부를 대괄호로 감싸면 해당 부분이 동적으로 처리된다.  
+예를 들어:  
+* src/pages/posts/[id].jsx 파일을 생성하면, /posts/1, /posts/2 등의 URL에 대해 이 파일이 렌더링됨.  
+* 이 파일 내에서 id 파라미터에 접근할 수 있으며, 이를 통해 다양한 동적 콘텐츠를 제공할 수 있다.  
+따라서 /posts/:id와 같은 동적 URL 경로를 만들기 위해서는 src/pages/posts/[id].jsx 파일을 생성해야 한다.  
+  
+8. Next.js에서는 캡처하려는 경로의 다양한 부분을 처리하기 위해 "캐치 올(catch-all)" 라우팅을 사용할 수 있다.  
+캐치 올 라우팅을 사용하면 여러 수준의 중첩된 경로를 하나의 파일에서 처리할 수 있다.  
+* src/pages/posts/[...id].jsx 파일을 생성하면, /posts/1/section/2/comments/3와 같은 URL뿐만 아니라 /posts/1, /posts/1/section 등의 여러 경로를 모두 이 파일에서 처리할 수 있다.  
+* 이 파일 내에서는 id라는 배열로 URL의 각 부분에 접근할 수 있다.  
+따라서 /posts/1/section/2/comments/3와 같은 URL을 잡기 위해서는 src/pages/posts/[...id].jsx 파일을 생성해야 한다.  
+  
+<br><br> 
+  
+- NextJS, PlanetScale, Prisma, Tailwind, Vercel, Cloudflare 등 활용 예정  
+   
+**NextJS**  
+App Router, Server component, Client component, Data Fetching,  Suspense등 사용할 예정  
+  
+- Vercel, PlanetScale, Cloudflare 가입하기  
+  
+- 질문하고 싶을 때 - 댓글  
+- 코드를 공유하거나 사진을 붙여넣거나 에러메시지를 붙여넣거나 - Issues  
+- `npx create-next-app@latest` : Next.js 애플리케이션을 생성  
+초기값이 있음(Tailwind 설치, Typescript 설정)  
+
+<br> 
+  
+### Typescript와 Javascript의 차이점  
+TypeScript와 JavaScript의 주요 차이는 TypeScript가 JavaScript의 상위 집합으로, 정적 타입 체계를 추가한다는 점이다.  
+  
+1. 타입 시스템:  
+    * JavaScript: 동적 타입 언어. 변수의 타입이 런타임에 결정되며, 타입을 명시적으로 선언하지 않는다.  
+    * TypeScript: 정적 타입 언어. 변수와 함수의 타입을 명시적으로 선언할 수 있으며, 컴파일 시점에 타입 검사를 수행한다. 이를 통해 코드의 오류를 사전에 발견하고, 더 안전하게 코드를 작성할 수 있음  
+2. 컴파일러:  
+    * JavaScript: 해석형 언어로, 브라우저나 Node.js 환경에서 바로 실행된다.  
+    * TypeScript: 컴파일러가 필요함. TypeScript 코드는 컴파일러(tsc)를 통해 JavaScript 코드로 변환된 후 실행된다. 따라서 TypeScript는 브라우저나 Node.js 환경에서 직접 실행되지 않고, 먼저 JavaScript로 컴파일되어야 한다.  
+3. 개발 도구 지원:  
+    * JavaScript: 대부분의 IDE와 코드 에디터가 기본적으로 지원하며, 코드 완성, 리팩토링 등의 기능을 제공한다.  
+    * TypeScript: 강력한 타입 시스템 덕분에 더 나은 코드 완성, 리팩토링, 오류 검출 기능을 제공하는 IDE와 코드 에디터의 지원을 받는다. Visual Studio Code는 TypeScript와의 통합이 특히 잘 되어 있다.  
+4. 기능 추가:  
+    * TypeScript: 최신 ECMAScript 기능을 지원하며, 클래스, 인터페이스, 제네릭, 네임스페이스 등의 추가 기능을 제공한다.  
+    * JavaScript: ECMAScript 표준에 정의된 기능만을 지원한다. 최신 기능은 브라우저와 Node.js에서 지원 여부에 따라 사용할 수 있다.  
+5. 코드 품질과 유지보수:  
+    * TypeScript: 타입을 명시적으로 선언하고, 컴파일 시점에 타입 검사를 통해 오류를 사전에 방지할 수 있기 때문에 코드의 품질과 유지보수성이 향상된다.  
+    * JavaScript: 동적 타입 언어이기 때문에, 런타임에 발생하는 오류를 피하기 위해 더 많은 테스트와 검증이 필요하다.  
+요약하면, TypeScript는 JavaScript의 모든 기능을 포함하면서도 추가적인 타입 안전성과 개발 도구 지원을 제공하여 더 큰 규모의 프로젝트나 복잡한 애플리케이션을 개발할 때 유용함  
+
+<br> 
+  
+### Next.js 애플리케이션을 생성시 초기 설정  
+![1]({{ site.baseurl }}/assets/img/20240610_1.png)  
+  
+- 설치를 마치면 `code carrot-market-reloaded`  
+(이전에 Visual Code Studio의 명령팔레트에 Shell Command: Install 'code' command in PATH를 입력해서 code명령을 사용할 수 있게 해야 함)  
+  
+- `npm run dev`   
+- 기존 코드 정리  
+![2]({{ site.baseurl }}/assets/img/20240610_2.png)  
+![3]({{ site.baseurl }}/assets/img/20240610_3.png)  
+
+<br> 
+  
+### 깃허브 연결  
+`git remote add origin 깃허브 주소`  
+  
