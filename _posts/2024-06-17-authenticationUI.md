@@ -1,6 +1,6 @@
 ---      
 layout: post 
-title:  "Tailwind4"
+title:  "Authentication UI"
 categories: [ Clone Coding ] 
 image: assets/img/20240617_4.png
 tags: [featured] 
