@@ -82,4 +82,25 @@ form의 자식 요소에서만 사용돼야 함. 즉 form의 상태에 따라 �
   
 - "use client"; 지시어 역시 Next.js 프레임워크에서 사용되며, 해당 코드가 클라이언트 측에서만 실행되어야 함을 명시한다. 서버 사이드 렌더링(SSR) 또는 정적 사이트 생성(SSG) 동안 이 코드는 실행되지 않는다. 이는 클라이언트 특정 API나 창(window) 접근과 같이 서버에서 실행될 수 없는 코드를 포함할 때 유용하다.   
 코드에서 FormButton 컴포넌트는 사용자의 폼 제출 상태를 반영하기 위해 useFormStatus를 사용한다. useFormStatus는 클라이언트 상태(폼이 제출 중인지 여부)를 관리하기 때문에 서버에서 실행될 필요가 없다. 따라서 "use client";를 사용하여 이 컴포넌트가 클라이언트 측에서만 실행되도록 함으로써, 불필요한 서버 처리를 방지하고 클라이언트에서의 사용자 경험을 최적화할 수 있다.  
+
+<br>  
+
+## useFormState  
   
+Server Action에서 오류가 발생해서 사용자에게 알릴 때 useFormState hook 사용  
+결과를 알고 싶은 action을 인자로 넘겨줘야 한다.  
+1. client component로 바꿔주고  
+client component 내부에서 use server를 선언할 수 없기 때문에   
+2. use server를 위한 actions.ts 라는 새로운 파일을 만들어 줌  
+  
+ ✔︎ useFormState를 쓸 때 실행하고자 하는 action을 전달하는 것 뿐만 아니라  
+초기값도 필수적으로 제공해야 한다.  
+  
+action은 formData와 함께 호출되는데 처음에는 초기값 state와 함께 호출되고 다음부터는 이전 action에서 return된 state와 함께 호출된다.  
+  
+![6]({{ site.baseurl }}/assets/img/20240620_1.png)  
+  
+state (상태):  
+* state는 현재 폼의 상태를 나타내며, handleForm 함수로부터 반환된 상태를 포함한다. 이 상태에는 폼의 데이터 또는 에러 메시지 등이 포함될 수 있다. 예를 들어, state.errors는 폼 검증 후 발생한 에러 리스트를 저장할 수 있다.  
+action (액션):  
+* action은 폼의 이벤트를 처리하기 위한 함수이다. 이 예에서는 <form> 태그의 action 속성으로 사용되고 있다. 폼이 제출되면, 이 action 함수가 호출되어 handleForm 함수를 실행하고 폼 데이터를 처리한다.  
