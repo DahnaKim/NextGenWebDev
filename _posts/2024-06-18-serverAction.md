@@ -102,5 +102,6 @@ action은 formData와 함께 호출되는데 처음에는 초기값 state와 함
   
 state (상태):  
 * state는 현재 폼의 상태를 나타내며, handleForm 함수로부터 반환된 상태를 포함한다. 이 상태에는 폼의 데이터 또는 에러 메시지 등이 포함될 수 있다. 예를 들어, state.errors는 폼 검증 후 발생한 에러 리스트를 저장할 수 있다.  
+  
 action (액션):  
 * action은 폼의 이벤트를 처리하기 위한 함수이다. 이 예에서는 <form> 태그의 action 속성으로 사용되고 있다. 폼이 제출되면, 이 action 함수가 호출되어 handleForm 함수를 실행하고 폼 데이터를 처리한다.  
