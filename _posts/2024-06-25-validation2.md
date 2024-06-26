@@ -1,0 +1,50 @@
+---    
+layout: post  
+title:  "Validation2"   
+categories: [ Clone Coding ]    
+image: assets/img/20240624_02.png  
+tags: [featured]   
+---   
+  
+# Validation2  
+  
+## Log In Validation  
+  
+`async` : async 키워드는 함수 앞에 위치하며, 해당 함수가 비동기 함수임을 나타낸다.   
+비동기 함수는 내부에서 await 키워드를 사용하여 비동기 작업의 완료를 기다릴 수 있게 해준다. async 함수는 항상 Promise를 반환한다. 예를 들어, createAccount 함수에서는 외부 API와의 통신이나 데이터베이스 조회 등 비동기 작업을 수행할 때 async를 사용하여 작업 완료를 기다릴 수 있다. 비동기 함수를 사용하면, 웹 애플리케이션에서 사용자 인터페이스가 멈추지 않고, 백그라운드에서 데이터 처리 등의 작업을 계속 수행할 수 있다.  
+  
+![1]({{ site.baseurl }}/assets/img/20240625_01.png)    
+  
+**상수 따로 분류하는 이유**  
+재사용성: 상수를 사용하면 여러 곳에서 동일한 값을 일관되게 사용할 수 있다.   
+가독성: 코드의 가독성을 높여준다.  
+유지보수성: 비밀번호 규칙이 변경되면 상수만 수정하면 되므로 코드의 다른 부분을 수정할 필요가 없다.  
+유효성 검사: 비밀번호 유효성 검사를 중앙에서 관리할 수 있다.   
+
+<br>
+  
+## Coerce  
+- `npm i validator` 설치 : 문자열에 대한 다양한 유효성 검사 기능을 제공하는 라이브러리  
+여기서는 특히 전화번호가 유효한 모바일 전화번호인지 검증하는 함수를 사용한다.  
+- zod 라이브러리의 `coerce` : 입력된 데이터를 명시된 타입으로 강제 변환하는 기능을 제공  
+데이터 유형이 애플리케이션에서 필요로 하는 형식과 정확히 일치하지 않을 때 유용하게 사용된다.  
+  
+```  
+export async function smsLogIn(prevState: any, formData: FormData) {  
+  console.log(formData.get("token"));  
+  console.log(tokenSchema.parse(formData.get("token")));  
+}  
+```  
+- `parce` : 입력된 데이터가 스키마의 요구사항을 충족하는지 확인하고, 만약 데이터가 요구사항을 만족하지 않으면 오류를 발생시킨다. 만약 데이터가 스키마를 만족한다면, 검증된 데이터를 반환한다.  
+
+<br>
+  
+## SMS Validation  
+  
+![2]({{ site.baseurl }}/assets/img/20240625_02.png)    
+  
+`refine` : refine 메소드는 두 개의 인자를 받는다.  
+1. 검증 함수: 첫 번째 인자는 실제 데이터를 검증하는 함수   
+2. 오류 메시지: 두 번째 인자는 검증이 실패했을 때 반환될 오류 메시지  
+  
+![3]({{ site.baseurl }}/assets/img/20240625_03.png)    
