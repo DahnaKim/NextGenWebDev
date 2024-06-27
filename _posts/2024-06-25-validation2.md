@@ -2,7 +2,7 @@
 layout: post  
 title:  "Validation2"   
 categories: [ Clone Coding ]    
-image: assets/img/20240624_02.png  
+image: assets/img/20240625_02.png  
 tags: [featured]   
 ---   
   
