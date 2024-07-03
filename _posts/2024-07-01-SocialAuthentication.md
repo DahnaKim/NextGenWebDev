@@ -2,7 +2,7 @@
 layout: post  
 title:  "Social Authentication"  
 categories: [ Clone Coding ]  
-image: assets/img/20240701_05.png  
+image: assets/img/20240701_01.png  
 tags: [featured]  
 ---  
   
@@ -154,7 +154,7 @@ export async function GET(request: NextRequest) {
 
 <br>
   
-### Code Challenge  
+**Code Challenge**  
 1. 재사용 가능한 login function 만들기  
 2. GitHub를 통해 새로운 사용자를 생성할 때, 데이터베이스에서 동일한 username을 가진 사용자가 이미 존재하는지 확인하고, 존재하는 경우 에러를 반환  
 3. GitHub API를 통해 이메일 정보를 가져오기  
