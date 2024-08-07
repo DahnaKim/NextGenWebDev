@@ -130,22 +130,7 @@ def view_artwork(artwork_id):
 <br>
 
 **view_artwork.html**  
-~~~
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>View Artwork</title>
-</head>
-<body>
-    <h1>{{ artwork[1] }}</h1>
-    <img src="{{ url_for('static', filename='uploads/' + artwork[3].split('/')[-1]) }}" alt="{{ artwork[1] }}" style="width:100%;max-width:600px;">
-    <p>Created at: {{ artwork[4] }}</p>
-    <p>{{ artwork[2] }}</p>
-    <a href="/listall">Back to list</a>
-</body>
-</html>
-~~~
+
 
 ![4]({{ site.baseurl }}/assets/img/20240304_4.png)
 

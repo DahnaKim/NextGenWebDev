@@ -89,7 +89,7 @@ const passwordRegex = new RegExp(
   
 `InputProps` : TypeScript 인터페이스로, 컴포넌트에 전달될 프로퍼티의 타입을 정의한다.   
   
-`InputHTMLAttributes` :  React의 내장 타입으로, HTML <input> 요소의 모든 표준 속성을 포함하는 타입임. 이 타입을 사용함으로써, 정의하지 않은 모든 HTML 속성(예: type, placeholder, value 등)을 컴포넌트에 전달할 수 있게 된다. 이를 통해 컴포넌트가 더 유연하고 재사용 가능하게 됨  
+`InputHTMLAttributes` :  React의 내장 타입으로, HTML `<input>` 요소의 모든 표준 속성을 포함하는 타입임. 이 타입을 사용함으로써, 정의하지 않은 모든 HTML 속성(예: type, placeholder, value 등)을 컴포넌트에 전달할 수 있게 된다. 이를 통해 컴포넌트가 더 유연하고 재사용 가능하게 됨  
   
 `...rest` : 나머지 연산자(Rest Operator)로, 구조 분해 할당에서 사용되지 않은 나머지 속성을 하나의 객체로 모아준다. 이 방식으로InputHTMLAttributes에 정의된 모든 표준 HTML 속성을 input 요소에 전달할 수 있다. 예를 들어, 컴포넌트를 사용할 때 다음과 같이 추가적인 속성을 전달할 수 있다.  
   
