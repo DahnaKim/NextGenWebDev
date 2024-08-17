@@ -45,9 +45,9 @@ Expo가 나타나기 전 React Native 팀과 관련 커뮤니티가 제공한 �
   
 ## React Native 프로젝트 생성  
 - node.js(LTS) 설치  
-- sudo npm install -g expo-cli (macOS의 경우 sudo 붙이기)  
+- sudo npm install -g expo-cli (macOS의 경우 sudo 붙이기) => 권장되지 않음
 - 설치 후 expo를 쳤을 때 에러 안나오면 정상  
-- `npx create-expo-app 프로젝트명` : 새 앱 생성  
+- `npx create-expo-app 프로젝트명` : 새 앱 생성 => 바로 이 명령 실행
   
 🛠️ **error fix**  
 ![4]({{ site.baseurl }}/assets/img/20240801_04.png)  
@@ -55,7 +55,9 @@ Expo가 나타나기 전 React Native 팀과 관련 커뮤니티가 제공한 �
 - `sudo chown -R 501:20 "/Users/dana/.npm"` : /Users/dana/.npm 디렉터리와 그 하위 파일 및 디렉터리의 소유권을 현재 사용자(UID 501)와 현재 사용자의 기본 그룹(GID 20)으로 변경  
 - `npm cache clean --force` : 캐시정리   
 - 프로젝트 재생성  
-
+  
+⭐️ 프로젝트 생성시 권한 명령어 먼저 입력하고 생성  
+  
 <br>
   
 ## 생성된 프로젝트 분석  
@@ -83,5 +85,23 @@ Expo가 나타나기 전 React Native 팀과 관련 커뮤니티가 제공한 �
 - Android 미리보기 - Android Studio 설치  
 More Actions 옵션 -> Virtual Device Manager -> 애뮬레이터 구축  
 ![6]({{ site.baseurl }}/assets/img/20240801_06.png)  
+
+
+### 프로젝트 생성 요약   
+
+1. Node.js 설치 확인  
+`node -v `  
+
+2. 최신 Expo CLI 설치  
+`npm install -g expo`  
+
+3. `sudo chown -R 501:20 "/Users/dana/.npm"`  
+/Users/dana/.npm 디렉터리와 그 하위 파일 및 디렉터리의 소유권을 현재 사용자(UID 501)와 현재 사용자의 기본 그룹(GID 20)으로 변경    
+
+4. `npx create-expo-app 프로젝트명`  
+
+5. `brew install watchman`  
+`watchman --version` : 정상작동하는지 확인  
+watchman은 React Native 프로젝트에서 파일 변경 사항을 감지하고, 이를 빠르게 처리하는 데 사용되는 도구. 특히 Mac 환경에서 React Native를 개발할 때 watchman을 미리 설치해 두는 것이 좋다. 이는 코드 수정 시 Metro 번들러가 변경 사항을 빠르게 감지하고, 앱을 신속하게 다시 로드하는 데 도움이 됨  
   
   
