@@ -50,6 +50,7 @@ tags: [featured]
 **컴포넌트가 2개 이상일 때 `fragment`로 감싸는 이유**  
 항상 단일한 루트 엘리먼트를 반환해야 하기 때문  
 불필요한 DOM요소를 추가하지 않고 여러 컴포넌트를 그룹화할 수 있다.  
+불필요한 DOM 요소가 많아지면 브라우저가 DOM 트리를 더 많이 관리해야 하므로, 성능에 영향을 줄 수 있다. 또한, 스타일링과 레이아웃 관리 측면에서 복잡도가 증가할 수 있다. 따라서 가능하면 불필요한 DOM 요소 생성을 피하는 것이 좋다.  
   
 <video controls width="600">      
   <source src="/NextGenWebDev/assets/img/20240813_01.mp4" type="video/mp4">      

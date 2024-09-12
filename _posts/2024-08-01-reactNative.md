@@ -92,16 +92,13 @@ More Actions 옵션 -> Virtual Device Manager -> 애뮬레이터 구축
 1. Node.js 설치 확인  
 `node -v `  
 
-2. 최신 Expo CLI 설치  
-`npm install -g expo`  
-
-3. `sudo chown -R 501:20 "/Users/dana/.npm"`  
+2. `sudo chown -R 501:20 "/Users/dana/.npm"`  
 /Users/dana/.npm 디렉터리와 그 하위 파일 및 디렉터리의 소유권을 현재 사용자(UID 501)와 현재 사용자의 기본 그룹(GID 20)으로 변경    
 
-4. `npx create-expo-app 프로젝트명`  
+3. `npx create-expo-app 프로젝트명`  
 
-5. `brew install watchman`  
+4. `brew install watchman`  
 `watchman --version` : 정상작동하는지 확인  
 watchman은 React Native 프로젝트에서 파일 변경 사항을 감지하고, 이를 빠르게 처리하는 데 사용되는 도구. 특히 Mac 환경에서 React Native를 개발할 때 watchman을 미리 설치해 두는 것이 좋다. 이는 코드 수정 시 Metro 번들러가 변경 사항을 빠르게 감지하고, 앱을 신속하게 다시 로드하는 데 도움이 됨  
-  
-  
+    
+5. `npm install --save-dev @types/react @types/react-native` 타입스트립트 사용  
