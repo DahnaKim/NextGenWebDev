@@ -78,7 +78,7 @@ https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${GOO
 예를 들어, 데이터를 삽입한 후 시스템이 꺼지더라도 삽입된 데이터는 손실되지 않고 유지된다.  
   
 **객체 스프레드 연산자(...)**   
-객체의 속성들을 복사하여 새로운 객체를 만드는 데 사용되는 JavaScript의 문법  
+객체의 모든 속성들을 복사하여 새로운 객체를 만드는 데 사용되는 JavaScript의 문법  
   
 - 리액트에서 useCallback과 useMemo와 같은 훅을 사용해 메모이제이션을 적용할 수 있다. 의존성 배열에 지정된 값이 변하지 않으면 함수가 재생성되지 않도록 함.  
 - && 연산자는 JavaScript에서 조건부 실행을 위한 문법. selectedLocation이 존재할 때만 && 뒤의 코드가 실행되어 마커가 렌더링된다.  

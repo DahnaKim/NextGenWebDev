@@ -102,7 +102,7 @@ import와 export 키워드를 사용
 동작 방식: 정적으로 분석되어, 실행 전에 모듈의 종속성을 파악할 수 있다.   
 따라서 ESM은 **트리 쉐이킹(Tree Shaking)**과 같은 최적화 기법을 지원한다.  
 파일 확장자: .mjs 또는 .js로 사용할 수 있다.  
-type 설정: package.json에서 "type": "module"을 설정하면 .js 파일도 ESM으로 해석된다.   
+type 설정: package.json에서 "type": "module"을 설정하면 .js 파일도 ESM으로 해석된다.  
 2. CommonJS 모듈 형식 (CJS)  
 CommonJS는 Node.js가 자바스크립트에 모듈 시스템을 도입하면서 만들어진 형식으로, 현재까지도 Node.js에서 널리 사용되고 있다.  
 require와 module.exports 키워드를 사용  
@@ -116,7 +116,7 @@ ESM과 CJS는 서로 다른 모듈 형식이기 때문에, 혼합해서 사용�
 Node.js 최신 버전에서는 ESM을 지원하지만, 프로젝트 내에서 type이 설정된 상태와 그렇지 않은 상태의 혼용 또는 번들링 환경에 따라 ESM 모듈을 제대로 로드하지 못하는 경우가 발생할 수 있다.  
   
 4. 변환 방법  
-CJS → ESM 변환: 기존의 CommonJS 모듈을 ESM 형식으로 변환하려면 module.exports를 export로 변경하고, require를 import로 변경   
+CJS → ESM 변환: 기존의 CommonJS 모듈을 ESM 형식으로 변환하려면 module.exports를 export로 변경하고, require를 import로 변경  
 5. ESM과 CJS 사용 시 주의 사항  
 프로젝트에 package.json에서 "type": "module"을 지정하면 .js 파일은 ESM 형식으로 처리되고, 지정하지 않으면 CommonJS로 처리된다.  
 두 모듈 형식을 함께 사용하려면 Babel이나 Webpack 같은 번들러를 통해 중간 변환 작업을 해야 하는 경우가 많다.  
@@ -150,6 +150,15 @@ expo-asset: 이미지나 미디어 파일을 효율적으로 관리하고 저장
   
 - `||`(논리 or 연산자)  
 앞의 값이 null 또는 undefined일 경우, 뒤에 있는 값을 기본값으로 반환  
+
+
+- `setTimeout`은 JavaScript에서 특정 코드를 일정 시간이 지난 후에 실행하도록 예약하는 함수  
+기본문법 `setTimeout(callbackFunction, delay);`  
+작동방식 : JavaScript는 이벤트 루프라는 메커니즘을 통해 setTimeout 같은 비동기 작업을 관리한다. setTimeout은 설정된 시간이 지나면 실행할 함수를 이벤트 큐에 추가하고, JavaScript가 현재 실행 중인 코드가 끝나면 큐에 있는 함수들을 순서대로 실행한다.  
+따라서, setTimeout을 사용하면 코드 실행을 잠시 미루는 효과를 얻을 수 있다.  
+
+- `useSharedValue`는 Reanimated 라이브러리에서 제공하는 기능으로, 애니메이션 값의 변경을 리액트 컴포넌트의 리렌더링 없이 효율적으로 관리할 수 있다
+
   
   
   
